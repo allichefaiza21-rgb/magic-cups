@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كأس المشاعر الذكي ✨</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #fff5f0; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .card { background: white; padding: 40px; border-radius: 25px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); text-align: center; width: 85%; border: 3px solid #6b4f3f; }
+        h1 { color: #6b4f3f; font-size: 24px; margin-bottom: 20px; }
+        #message { font-size: 22px; color: #444; min-height: 80px; line-height: 1.5; font-weight: bold; }
+        button { background: #6b4f3f; color: white; border: none; padding: 15px 30px; border-radius: 50px; font-size: 18px; cursor: pointer; margin-top: 20px; width: 100%; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>فنجانكِ يقرأ ما بقلبكِ.. ☕</h1>
+        <div id="message">المسي الزر لاستقبال رسالة "الذكاء الاصطناعي" المخصصة لكِ</div>
+        <button onclick="startAI()">استقبلي الرسالة ✨</button>
+    </div>
+    <script>
+        const powerMessages = [
+            "الخيبة التي كسرتكِ اليوم، هي التي ستبني النسخة الأقوى منكِ غداً. ✨",
+            "سيتعجبون كيف نهضتِ، وسيكون نجاحكِ هو الرد الوحيد والصامت. 🚀",
+            "أنتِ مهندسة دولة.. مكانكِ في القمة ولن يسلبكِ أحد علمكِ. 💪",
+            "تذكري.. الأبواب التي أُغلقت في وجهكِ لم تكن أبوابكِ، قدركِ أجمل بمرات. 🦋",
+            "اشربي قهوتكِ بهدوء، العالم ينتظر إبداعكِ القادم."
+        ];
+        function startAI() {
+            const text = powerMessages[Math.floor(Math.random() * powerMessages.length)];
+            const display = document.getElementById("message");
+            display.innerHTML = "";
+            let i = 0;
+            function type() {
+                if (i < text.length) {
+                    display.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, 50);
+                }
+            }
+            type();
+        }
+    </script>
+</body>
+</html>
